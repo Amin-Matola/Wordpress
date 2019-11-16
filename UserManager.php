@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace UserManager
+namespace UserManager;
 
 class Users{
 
@@ -18,11 +18,20 @@ class Users{
   
   }
 
+  
   /****************** get the user instance *********************/
   public static function getInstance(int $user_id = null){
       self::$instance     = new self($user_id);
       return self::$instance
       }
+  
+  
+  /******************** Get current user object******************/
+  public fucntion get_user(){
+        if(empty($this->user))
+              return false;
+        return $this -> user;
+  }
       
 }
 
