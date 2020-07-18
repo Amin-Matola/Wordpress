@@ -9,19 +9,19 @@
 class Bike_Handler{
 
 		constructor(){
-				this.body 		= null;
-				this.target 	= null;
-				this.choice 	= null;
-				this.color 		= null;
-				this.body_choice= null;
-				this.carrier 	= null;
-				this.options 	= [];
-				this.colors 	= {};
-				this.handler 	= null;
-				this.item 		= this;
+			this.body 	= null;
+			this.target 	= null;
+			this.choice 	= null;
+			this.color 	= null;
+			this.body_choice= null;
+			this.carrier 	= null;
+			this.options 	= [];
+			this.colors 	= {};
+			this.handler 	= null;
+			this.item 	= this;
 
-				/* Call all the bootstrapping functions for this item */
-				this.init();
+			/* Call all the bootstrapping functions for this item */
+			this.init();
 		}
 
 
@@ -29,12 +29,12 @@ class Bike_Handler{
 		 * A Bootstrapping function for the handler/select and the bike.
 		 * */
 		init(c = "hd"){
-				this.set_handler("hd");
-				this.set_options();
-				this.initialize_paint();
-				this.set_event_handlers();
-				this.initialize_handler_background(elephant_initial.initial);
-				this.repaint_bike(this.get_handler_color());
+			this.set_handler("hd");
+			this.set_options();
+			this.initialize_paint();
+			this.set_event_handlers();
+			this.initialize_handler_background(elephant_initial.initial);
+			this.repaint_bike(this.get_handler_color());
 		}
 
 
