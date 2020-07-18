@@ -21,13 +21,15 @@ class Bike_Admin{
 	 * */
 	public function add_admin_page(){
 	
-		add_menu_page( "Bike Appearance", 
-						"Elephant Bike", 
-						"manage_options", 
-						"elephant-bike", 
-						array($this, "add_settings"), 
-						"dashicons-sos", 
-						3.76 );
+		add_menu_page( 
+				"Bike Appearance", 
+				"Elephant Bike", 
+				"manage_options", 
+				"elephant-bike", 
+				array($this, "add_settings"), 
+				"dashicons-sos", 
+				3.76 
+			     );
 	}
 
 
@@ -37,21 +39,24 @@ class Bike_Admin{
 	public function add_admin_subpages(){
 		
 		add_submenu_page(
-						"elephant-bike",  
-						"Bike Documentation", 
-						"Documentation", 
-						"manage_options", 
-						"documentation", 
-						array($this, "bike_documentation"), 
-						1 );
+				"elephant-bike",  
+				"Bike Documentation", 
+				"Documentation", 
+				"manage_options", 
+				"documentation", 
+				array($this, "bike_documentation"), 
+				1 
+				);
+		
 		add_submenu_page(
-						"elephant-bike",  
-						"Set Bike", 
-						"Configure", 
-						"manage_options", 
-						"configure-bike", 
-						array($this, "add_settings"), 
-						1 );
+				"elephant-bike",  
+				"Set Bike", 
+				"Configure", 
+				"manage_options", 
+				"configure-bike", 
+				array($this, "add_settings"), 
+				1 
+				);
 	}
 
 	/* *
@@ -90,7 +95,7 @@ class Bike_Admin{
 	 * Get the posted data
 	 * */
 	public function get_posted_color($data = []){
-	    if(empty($data) || empty($data["initial_color"])){
+	    if( empty($data) || empty($data["initial_color"]) ){
 	        return false;
 	    }
 		$colors 	= $this->get_colors();
@@ -104,7 +109,7 @@ class Bike_Admin{
 	 * Append the color to the query
 	 * */
 	public function get_additional_string(){
-		return "?initial=".get_option("initial_colour");
+		return "?initial=" . get_option( "initial_colour" );
 	}
 
 	/* *
