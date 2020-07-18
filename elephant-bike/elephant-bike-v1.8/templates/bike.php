@@ -4,33 +4,33 @@
 		<style type="text/css">
 
 			html, body, .container{
-			padding:0px;
-			margin:0px;
+				padding:0px;
+				margin:0px;
 			}
 
 			.bike-container{
-					display:inline-flex;
-					width:100%;
-					background:#f7f7f7;
-					margin:0px 20px !important;
-					padding:0px !important;
+				display:inline-flex;
+				width:100%;
+				background:#f7f7f7;
+				margin:0px 20px !important;
+				padding:0px !important;
 			}
 
 			h1,
 			h2{
-					/*text-shadow:0px 1px 1px #777777;*/
-					font-size: 1.3em !important;
-					margin: 20px 10px !important;
-					font-weight: bold !important;
+				/*text-shadow:0px 1px 1px #777777;*/
+				font-size: 1.3em !important;
+				margin: 20px 10px !important;
+				font-weight: bold !important;
 			}
 
 			h2{
-					/*margin: 20px 10px !important;*/
+				/*margin: 20px 10px !important;*/
 			}
 			svg#bike{
-			 margin-top:0%;
-			 height:100vh;
-			 background:white;
+				 margin-top:0%;
+				 height:100vh;
+				 background:white;
 			}
 
 			.bike-left{
@@ -69,35 +69,35 @@
 
 
 			.bike-right select:focus{
-					outline:0 !important;
-					border:0px solid black;
-					border-top:0px solid black;
-					border-bottom:0px solid black;
+				outline:0 !important;
+				border:0px solid black;
+				border-top:0px solid black;
+				border-bottom:0px solid black;
 					
 
 			}
 
 			.bike-right select#hd:focus{
-					border-bottom-right-radius: 0px !important;
-					border-bottom-left-radius: 0px !important;
+				border-bottom-right-radius: 0px !important;
+				border-bottom-left-radius: 0px !important;
 			}
 
 			.bike-right select:last-child{
-					border-top-right-radius: 0px !important;
-					border-top-left-radius: 0px !important;
+				border-top-right-radius: 0px !important;
+				border-top-left-radius: 0px !important;
 			}
 
 			.bike-right select option{
-					padding:30px 0px !important;
-					height:50px !important;
-					font-size:1.2em;
-					border:0px !important;
-					outline: 0 !important;
+				padding:30px 0px !important;
+				height:50px !important;
+				font-size:1.2em;
+				border:0px !important;
+				outline: 0 !important;
 			}
 			
 			.bike-right select option:focus{
 				outline: 0 !important;
-			    background:attr(value) !important;
+			    	background:attr(value) !important;
 			}
 
 			#jsresults{
@@ -108,7 +108,7 @@
 			}
 
 			.pad{
-					margin:5px 0px 20px 1%;
+				margin:5px 0px 20px 1%;
 			}
 
 			.bike-right #bikemaster{
@@ -140,34 +140,34 @@
 
 
 			@media screen and (max-width:815px){
-					.bike-left, .bike-right{
-							width:100%;
-					}
+				.bike-left, .bike-right{
+						width:100%;
+				}
 
-					.bike-right{
-							border:0px solid grey;
-							box-shadow:none;
-					}
+				.bike-right{
+						border:0px solid grey;
+						box-shadow:none;
+				}
 
-					svg#bike{
-			 				margin-top:-5%;
-			 				height:400px;
-					}
+				svg#bike{
+						margin-top:-5%;
+						height:400px;
+				}
 
-					.bike-container{
-							display:block;
-					}
+				.bike-container{
+						display:block;
+				}
 
-					#bikemaster{
-						width:95%;
-						margin:auto;
-					}
+				#bikemaster{
+					width:95%;
+					margin:auto;
+				}
 
-					select.pad{
+				select.pad{
 
-						margin:10px auto !important;
-						width:98%;
-					}
+					margin:10px auto !important;
+					width:98%;
+				}
 			}
 
 		</style>
