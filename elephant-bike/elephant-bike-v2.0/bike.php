@@ -1,12 +1,12 @@
 <?php
 
 /* *
- *Plugin Name: 		Elephant Bike
- *Plugin Version: 	2.0
- *Description:		Plugin for Elephant Bike Generation
- *Author: 			COG Developers
- *Author URI: 		http://codenug.com/webmaster
- *Plugin URI: 		http://cogtests.codenug.com/bike-plugin.zip
+ * Plugin Name: 		Elephant Bike
+ * Plugin Version: 		2.0
+ * Description:			Plugin for Elephant Bike Generation
+ * Author: 			Amin Matola
+ * Author URI: 			http://codenug.com/webmaster
+ * Plugin URI: 			http://cogtests.codenug.com/bike-plugin.zip
  * */
 
 class Bike_Generator{
