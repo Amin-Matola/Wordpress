@@ -7,6 +7,8 @@
  * Author: 			Amin Matola
  * Author URI: 			http://codenug.com/webmaster
  * Plugin URI: 			http://cogtests.codenug.com/bike-plugin.zip
+ * Requires at least: 		5.3
+ * Requires PHP:      		7.2
  * */
  
 define( "BIKE_URL", plugin_dir_url( __FILE__ ) );
