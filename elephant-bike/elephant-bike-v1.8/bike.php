@@ -278,7 +278,7 @@ class Bike_Generator{
           $atts 	= $value["attributes"];
 
           if($atts["attribute_$what"] === $item || $value["variation_id"] === $item){
-            if(is_int($colour)){
+            if(is_int($item)){
               $id = $atts["attribute_$what"];
             }
             else{
