@@ -2,7 +2,7 @@
 
 /* *
  *Plugin Name: 		Elephant Bike
- *Plugin Version: 	1.0
+ *Plugin Version: 	1.8
  *Description:		Plugin for Elephant Bike Generation
  *Author:               Amin Matola
  *Author URI: 		http://codenug.com/webmaster
