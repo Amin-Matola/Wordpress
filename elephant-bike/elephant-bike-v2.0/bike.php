@@ -14,7 +14,7 @@
 define( "BIKE_URL", plugin_dir_url( __FILE__ ) );
 define( "BIKE_PATH", plugin_dir_path( __FILE__ ) ?? __DIR__ );
 
-class Bike_Generator{
+class Bike_Generator {
 	
 	public $bike;
 	
@@ -147,12 +147,19 @@ class Bike_Generator{
 
 	/* *
 	 * Add the bike to the cart
+	 *
+	 * @param $id 			- Int
+	 * @param $qty			- Int
+	 * @param $variation_id 	- Int
+	 * @param $variation_data	- Array
+	 *
+	 * Returns Boolean true on success or String Message
 	 * */
 	public function add_to_cart( $id, $qty, $variation_id, $variation_data ){
 		
 		$item_key 		= WC()->cart->add_to_cart( $id, $qty, $variation_id, $variation_data );
 		
-		if(is_wp_error( $item_key ) || $item_key == false){
+		if( is_wp_error( $item_key ) || $item_key == false){
 			return "We were unable to add <span style='colour:orange'>{$_POST['colour']} " . wc_get_product( $id )->get_name() . "</span> to the cart. Please try different combination.";
 		}
 		return true;
@@ -161,12 +168,17 @@ class Bike_Generator{
 
 	/* *
 	 * add to cart link changing
+	 *
+	 * @param $link 	- String
+	 * @param $product  	- Object
+	 *
+	 * Returns Modified link for the Bike
 	 * */
 	public function add_to_cart_link( $link, $product ){
-		if($product->get_id() == get_option( "elephant_bike_id", "" )){
+		if( $product->get_id() == get_option( "elephant_bike_id", "" )){
 			$site_url 	= get_site_url() . "/";
 			$slg 		= get_option( "bike_data", [] );
-			
+
 			$complete   = !empty( $slg ) ? $slg["slug"] : "elephant-bike";
 			$site_url   .= $complete;
 
@@ -184,16 +196,11 @@ class Bike_Generator{
 		return $link;
 	}
 
-	public function build_custom_query( $p ){
-		$r = "";
-		foreach ( $p as $key => $value ) {
-			$r .= "$key = $value<br>";
-		}
-		return $r;
-	}
 
 	/* *
 	 * Load the admin class instance for use in this plugin setup
+	 *
+	 * Returns the instance of Bike_Admin class
 	 * */
 	public function get_admin_instance(){
 		return Bike_Admin::get_instance();
@@ -201,6 +208,10 @@ class Bike_Generator{
 
 	/* *
 	 * Internal Use, get the methods connected to object
+	 *
+	 * @param $ob - Object
+	 *
+	 * Returns the methods defined inside given object' class
 	 * */
 	public function get_methods( $ob ){
 		return get_class_methods( get_class( $ob ) );
@@ -224,14 +235,15 @@ class Bike_Generator{
 	/* *
 	 * Generate bike additional data
 	 *
-	 * @param Array from - Data to generate bike data from
+	 * @param Array $from 		- Data to generate bike data from
+	 * @param String $current	- The name of current attribute, outdated
 	 * 
 	 * Return Array Filtered data
 	 * */
 	public function generate_additional_bike_data($from, $current = "colour"){
 		$additional_data 	= [];
-		foreach ($from as $key => $value) {
-			if(strpos(strtolower($key), strtolower("attribute_")) === 0){ // && $key != "attribute_$current") {
+		foreach( $from as $key => $value ) {
+			if( strpos( strtolower( $key ), strtolower( "attribute_" ) ) === 0){ // && $key != "attribute_$current") {
 				$additional_data[$key] = $value;
 			}
 		}
@@ -240,23 +252,32 @@ class Bike_Generator{
 
 	/* *
 	 * Get the quantity of the specified variation
+	 *
+	 * @param $variation 		- (Int/String) variation name/id
+	 *
+	 * Returns the number of items in stock for the given variation
 	 * */
-	public function get_variation_stock_quantity($variation){
-		$_v 	= new WC_Product_Variation($variation);
+	public function get_variation_stock_quantity( $variation ){
+		$_v 	= new WC_Product_Variation( $variation );
 		return $_v->get_stock_quantity();
 	}
 
 
 	/* *
 	 * Redirect the bike to the bike project page
+	 *
+	 * @param $link 	- String - the link the bike
+	 * @param $product 	- Object - The current product
+	 *
+	 * Returns link modified to reach the custom product/bike page
 	 * */
-	public function generate_custom_bike_link($link, $product){
+	public function generate_custom_bike_link( $link, $product ){
 		
 		if($product->get_id() 	== get_option( "elephant_bike_id", "" )){
 			$link 	 	=  get_site_url() . "/";
 			$slug 		=  get_option("bike_data", []);
 			
-			$appendix 	=  !empty( $slug ) && !empty( $slug["slug"] ) ? $slug["slug"] : "elephant-bike-3";
+			$appendix 	=  !empty( $slug ) && !empty( $slug["slug"] ) ? $slug["slug"] : "elephant-bike";
 			
 			$link .= $appendix;
 		}
@@ -266,6 +287,8 @@ class Bike_Generator{
 
 	/* *
 	 * Get the data of the bike
+	 *
+	 * Returns the set data of this bike
 	 * */
 	public function get_bike_data(){
 		return $this->bike_data;
@@ -273,17 +296,21 @@ class Bike_Generator{
 
 	/* *
 	 * Get the bike woocommerce product
+	 *
+	 * Returns bike Object
 	 * */
 	public function get_bike(){
 		
 		return $this->bike;
-
+		
 	}
 	
 	/* *
 	 * Get the id of the chosen bike colour
+	 *
+	 * @param $item 
 	 * */
-	public function get_item_id($item, $what = "colour"){
+	public function get_item_id( $item, $what = "colour" ){
 		$bike 		= $this->get_bike();
 		$varis 		= $bike->get_available_variations();
 		$id 		= null;
