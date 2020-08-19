@@ -1,9 +1,9 @@
 class Bike_Ajax{
 
 	constructor(){
-		this.id 		  = null;
-		this.variation_id = null;
-		this.colors 	  = {}
+		this.id 		= null;
+		this.variation_id 	= null;
+		this.colors 	  	= {}
 		this.set_target("div.bike-right select#hd");
 		this.set_handler();
 		this.set_handlers();
@@ -197,11 +197,11 @@ class Bike_Ajax{
 	generate_valid_color(code){
 		var colors, all, first_word, last_word;
 
-		colors = this.get_colors();
-		all    = colors[code].split("_");
+		colors 		= this.get_colors();
+		all    		= colors[code].split("_");
 
-		first_word = this.capitalize(all[0]);
-		last_word  = this.capitalize(all[1]);
+		first_word 	= this.capitalize(all[0]);
+		last_word  	= this.capitalize(all[1]);
 
 	}
 
@@ -242,7 +242,7 @@ class Bike_Ajax{
 
 					_this.repaint_handlers();
 				}else{
-					_this.set_display("Sorry! "+_this.get_target_color() + " Bike is <b>not available</b> for purchase.");
+					_this.set_display("Sorry! " + _this.get_target_color() + " Bike is <b>not available</b> for purchase.");
 				}
 			})
 	}
@@ -275,7 +275,7 @@ class Bike_Ajax{
 			this.set_display(results.cart_message);
 		}
 		else{
-			this.set_display("Sorry! Adding "+this.get_target_color()+" bike to cart failed failed.");
+			this.set_display("Sorry! Adding " + this.get_target_color() + " bike to cart failed.");
 		}
 	}
 
@@ -286,6 +286,10 @@ class Bike_Ajax{
 		 	return document.querySelector(item);
 	}
 }
+
+/* *
+ * Make sure we are working with Bike Page
+ * */
 if(Bike_Ajax.test_handler())
 	new Bike_Ajax();
 
