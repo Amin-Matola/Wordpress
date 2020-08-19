@@ -76,6 +76,10 @@ class Bike_Generator {
 	
 	/* *
 	 * Load elephant bike to this class
+	 *
+	 * @param $bike  Optional	- Object - Bike Object
+	 *
+	 * Loads the given bike or loads the default bike $this->bike
 	 * */
 	public function load_bike( $bike = [] ){
 		$ops            = [];
