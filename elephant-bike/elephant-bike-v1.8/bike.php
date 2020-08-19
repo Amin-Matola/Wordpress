@@ -4,7 +4,7 @@
  *Plugin Name: 		Elephant Bike
  *Plugin Version: 	1.0
  *Description:		Plugin for Elephant Bike Generation
- *Author: 			COG Developers
+ *Author: 			Amin Matola
  *Author URI: 		http://codenug.com/webmaster
  *Plugin URI: 		http://cogtests.codenug.com/bike-plugin.zip
  * */
