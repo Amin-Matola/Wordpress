@@ -205,6 +205,8 @@ class Bike_Generator {
 	public function get_admin_instance(){
 		return Bike_Admin::get_instance();
 	}
+	
+	
 
 	/* *
 	 * Internal Use, get the methods connected to object
@@ -319,7 +321,10 @@ class Bike_Generator {
 	/* *
 	 * Get the id of the chosen bike colour
 	 *
-	 * @param $item 
+	 * @param $item  	- String or Int, Variation to check for
+	 * @param $what 	- String attribute to look for
+	 *
+	 * Returns the id or data of a given attribute
 	 * */
 	public function get_item_id( $item, $what = "colour" ){
 		$bike 		= $this->get_bike();
@@ -348,7 +353,7 @@ class Bike_Generator {
 	 *
 	 * @param Array Optional $posted_data - Data to be processed.
 	 * 
-	 * Type: Void
+	 * Void or Boolean
 	 * */
 	public function bikejs( $posted_data = [] ){
 		global $post;
@@ -405,6 +410,8 @@ class Bike_Generator {
 
 	/* *
 	 * Add code for this elephant bike
+	 *
+	 * Void
 	 * */
 	public function add_codes(){
 		add_shortcode( "elephant_bike", array( $this, "get_bike_data") );
@@ -414,6 +421,8 @@ class Bike_Generator {
 
 	/* *
 	 * Set the bike woocommerce product
+	 *
+	 * Return Boolean false if no products were found or void
 	 * */
 	public function set_bike(){
 		$products 		= new WC_Product_Query(array(
@@ -433,6 +442,8 @@ class Bike_Generator {
 
 	/* *
 	 * Set the initial colour for this bike
+	 *
+	 * Return Boolean false or void
 	 * */
 	public function set_bike_data(){
 		$bike 		  = $this->get_bike();
@@ -457,6 +468,8 @@ class Bike_Generator {
 
 	/* *
 	 * Remove the data for this bike when being deactivated
+	 *
+	 * Void
 	 * */
 	public function unset_bike_data(){
 		delete_option( "elephant_bike_id" );
@@ -496,8 +509,12 @@ class Bike_Generator {
 
 	/* *
 	 * Extract all id's of all available variations
+	 *
+	 * @param $variation_vars 	- Array
+	 *
+	 * Returns Empty array or Array containing Bike Id and other variations
 	 * */
-	public function map_variation_to_id($available_vars){
+	public function map_variation_to_id( $available_vars ){
 	    
 		if(empty( $available_vars ) || !is_object( $this->bike ) ){
 			return [];
