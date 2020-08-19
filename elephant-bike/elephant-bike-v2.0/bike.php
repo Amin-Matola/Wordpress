@@ -231,6 +231,8 @@ class Bike_Generator {
 
 		return "Item <b>$colour $item</b> added to cart, <a style='color:orange;cursor:pointer' href='".wc_get_cart_url()."'>View Cart</a>";
 	}
+	
+	
 
 	/* *
 	 * Generate bike additional data
@@ -250,6 +252,8 @@ class Bike_Generator {
 		return $additional_data;
 	}
 
+	
+	
 	/* *
 	 * Get the quantity of the specified variation
 	 *
@@ -262,6 +266,7 @@ class Bike_Generator {
 		return $_v->get_stock_quantity();
 	}
 
+	
 
 	/* *
 	 * Redirect the bike to the bike project page
@@ -285,6 +290,8 @@ class Bike_Generator {
 		return $link;
 	}
 
+	
+	
 	/* *
 	 * Get the data of the bike
 	 *
@@ -293,6 +300,8 @@ class Bike_Generator {
 	public function get_bike_data(){
 		return $this->bike_data;
 	}
+	
+	
 
 	/* *
 	 * Get the bike woocommerce product
@@ -304,6 +313,8 @@ class Bike_Generator {
 		return $this->bike;
 		
 	}
+	
+	
 	
 	/* *
 	 * Get the id of the chosen bike colour
@@ -319,7 +330,7 @@ class Bike_Generator {
 			$atts 	= $value["attributes"];
 
 			if( $atts["attribute_$what"] === $item || $value["variation_id"] === $item ){
-				if( is_int( $colour ) ){
+				if( is_int( $item ) ){
 					$id = $atts["attribute_$what"];
 				}
 				else{
