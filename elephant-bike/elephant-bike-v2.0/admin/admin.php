@@ -3,6 +3,8 @@
 
 /* *
  * Handle admin menus and the likes
+ *
+ * Design Pattern: 	Singleton
  * */
 
 class Bike_Admin{
