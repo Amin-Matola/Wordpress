@@ -229,7 +229,7 @@ class Bike_Generator {
 	 *
 	 * Return Formatted html for the bike.
 	 * */
-	public function generate_cart_html($item = "", $colour = null){
+	public function generate_cart_html( $item = "", $colour = null ){
 
 		return "Item <b>$colour $item</b> added to cart, <a style='color:orange;cursor:pointer' href='".wc_get_cart_url()."'>View Cart</a>";
 	}
@@ -244,7 +244,7 @@ class Bike_Generator {
 	 * 
 	 * Return Array Filtered data
 	 * */
-	public function generate_additional_bike_data($from, $current = "colour"){
+	public function generate_additional_bike_data( $from, $current = "colour" ){
 		$additional_data 	= [];
 		foreach( $from as $key => $value ) {
 			if( strpos( strtolower( $key ), strtolower( "attribute_" ) ) === 0){ // && $key != "attribute_$current") {
@@ -282,7 +282,7 @@ class Bike_Generator {
 		
 		if($product->get_id() 	== get_option( "elephant_bike_id", "" )){
 			$link 	 	=  get_site_url() . "/";
-			$slug 		=  get_option("bike_data", []);
+			$slug 		=  get_option( "bike_data", [] );
 			
 			$appendix 	=  !empty( $slug ) && !empty( $slug["slug"] ) ? $slug["slug"] : "elephant-bike";
 			
@@ -414,7 +414,7 @@ class Bike_Generator {
 	 * Void
 	 * */
 	public function add_codes(){
-		add_shortcode( "elephant_bike", array( $this, "get_bike_data") );
+		add_shortcode( "elephant_bike", array( $this, "get_bike_data" ) );
 	}
 
 
@@ -433,8 +433,8 @@ class Bike_Generator {
 		    return false;
 		}
 
-			$this->bike = $products->get_products()[0];
-		if( is_object( $this->bike ) && count($this->bike->get_meta( "_bike_slug", [] )) < 1 ){
+			$this->bike 	= $products->get_products()[0];
+		if( is_object( $this->bike ) && count( $this->bike->get_meta( "_bike_slug", [] ) ) < 1 ){
 			$this->bike->update_meta_data( "_bike_slug", "elephant-bike" );
 		}
 
@@ -446,11 +446,11 @@ class Bike_Generator {
 	 * Return Boolean false or void
 	 * */
 	public function set_bike_data(){
-		$bike 		  = $this->get_bike();
+		$bike 		 = $this->get_bike();
 
 
 		delete_option( "bike_data" );
-		$intersection = count( array_intersect( ["initial", "slug"], array_keys( get_option( "bike_data", []) ) ) );
+		$intersection 	 = count( array_intersect( ["initial", "slug"], array_keys( get_option( "bike_data", []) ) ) );
 
 		if( !is_object( $bike ) || count( $bike->get_meta( "_bike_slug", [] ) ) < 1 || $intersection === 2 ){
 			
@@ -520,14 +520,14 @@ class Bike_Generator {
 			return [];
 		}
 	    
-		$attributes 	= array_keys( $this->bike->get_attributes() );
+		$attributes 		= array_keys( $this->bike->get_attributes() );
 		
-		$results 	= array_fill_keys( array_values($attributes), [] );
+		$results 		= array_fill_keys( array_values($attributes), [] );
 
 		foreach( $available_vars as $key => $value ) {
 
-			$attrs 				= $available_vars[$key]["attributes"];
-			//$id 				= $available_vars[$key]["variation_id"];
+			$attrs 		= $available_vars[$key]["attributes"];
+			//$id 		= $available_vars[$key]["variation_id"];
 
 			foreach ( $results as $k => $v ) {
 				if( !in_array( $attrs["attribute_$k"], $results[$k] ) ){
