@@ -209,11 +209,12 @@ class Bike_Admin{
 			
 			$item->save();
 
-			$bike_data 	= ["name"=>$name??$item->get_name(),
-							"slug"=>$slug?? get_metadata("post", $item->get_id(), "_bike_slug", true), 
-							"sku"=>$sku??$item->get_sku(), 
-							"initial"=>$initial??get_option("initial_colour", "")
-						  ];
+			$bike_data 	= [
+					   "name"=>$name??$item->get_name(),
+					   "slug"=>$slug?? get_metadata("post", $item->get_id(), "_bike_slug", true), 
+					   "sku"=>$sku??$item->get_sku(), 
+					   "initial"=>$initial??get_option("initial_colour", "")
+					];
 						  
 
             update_option("elephant_bike_id", $item->get_id());
