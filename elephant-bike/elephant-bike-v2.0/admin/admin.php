@@ -21,13 +21,13 @@ class Bike_Admin{
 	 * */
 	public function add_admin_page(){
 	
-		add_menu_page( "Bike Appearance", 
-						"Elephant Bike", 
-						"manage_options", 
-						"elephant-bike", 
-						array($this, "add_settings"), 
-						"dashicons-sos", 
-						3.76 );
+		add_menu_page(  "Bike Appearance", 
+				"Elephant Bike", 
+				"manage_options", 
+				"elephant-bike", 
+				array($this, "add_settings"), 
+				"dashicons-sos", 
+				3.76 );
 	}
 
 
@@ -37,21 +37,21 @@ class Bike_Admin{
 	public function add_admin_subpages(){
 		
 		add_submenu_page(
-						"elephant-bike",  
-						"Bike Documentation", 
-						"Documentation", 
-						"manage_options", 
-						"documentation", 
-						array($this, "bike_documentation"), 
-						1 );
+				"elephant-bike",  
+				"Bike Documentation", 
+				"Documentation", 
+				"manage_options", 
+				"documentation", 
+				array($this, "bike_documentation"), 
+				1 );
 		add_submenu_page(
-						"elephant-bike",  
-						"Set Bike", 
-						"Configure", 
-						"manage_options", 
-						"configure-bike", 
-						array($this, "add_settings"), 
-						1 );
+				"elephant-bike",  
+				"Set Bike", 
+				"Configure", 
+				"manage_options", 
+				"configure-bike", 
+				array($this, "add_settings"), 
+				1 );
 	}
 
 	/* *
@@ -182,7 +182,7 @@ class Bike_Admin{
 	 * Set the configurations from the admin
 	 * */
 	public function bike_settings(){
-		if(!is_admin()){
+		if( !is_admin() ){
 			return false;
 		}
 		$name 		= $_POST["bike_name"];
@@ -203,9 +203,9 @@ class Bike_Admin{
 		if(count($items->get_products())){
 			
 			$item 		= $items->get_products()[0];
-			$item->get_sku() == $sku?$item->set_sku( $sku ):"";
-			!empty($name)?$item->set_name($name): "";
-			!empty($slug)?$item->update_meta_data("_bike_slug", $slug, true):"";
+			$item->get_sku() == $sku ? $item->set_sku( $sku ):"";
+			!empty( $name ) ? $item->set_name( $name ): "";
+			!empty( $slug ) ? $item->update_meta_data("_bike_slug", $slug, true):"";
 			
 			$item->save();
 
