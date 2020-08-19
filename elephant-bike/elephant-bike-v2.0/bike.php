@@ -10,7 +10,7 @@
  * */
  
 define( "BIKE_URL", plugin_dir_url( __FILE__ ) );
-define( "BIKE_PATH", plugin_dir_path( __FILE__ ) );
+define( "BIKE_PATH", plugin_dir_path( __FILE__ ) ?? __DIR__ );
 
 class Bike_Generator{
 	
