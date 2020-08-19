@@ -1,5 +1,5 @@
 # Wordpress
-This repository is the place for developments of Wordpress/Woocommerce PHP Programming
+This repository is the place for developments of **Wordpress/Woocommerce** PHP Programming
 
 # Items
 The following Items will be held in this repository
