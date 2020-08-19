@@ -101,12 +101,6 @@ class Bike_Generator{
 
 	}
 
-	public function show_data($data){
-		foreach ( $data as $key => $value ) {
-			# code...
-		}
-	}
-
 
 	/* *
 	 * Set the hooks up and running
@@ -148,6 +142,15 @@ class Bike_Generator{
 			    $this->load_bike( $this->bike );
 		}
 
+	}
+	
+	/* *
+	 * Development use only...
+	 * */
+	public function show_data( $data ){
+		foreach ( $data as $key => $value ) {
+			# code...
+		}
 	}
 
 	
