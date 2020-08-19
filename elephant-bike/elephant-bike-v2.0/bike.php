@@ -144,16 +144,6 @@ class Bike_Generator{
 
 	}
 	
-	/* *
-	 * Development use only...
-	 * */
-	public function show_data( $data ){
-		foreach ( $data as $key => $value ) {
-			# code...
-		}
-	}
-
-	
 
 	/* *
 	 * Add the bike to the cart
