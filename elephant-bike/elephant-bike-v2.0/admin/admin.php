@@ -90,6 +90,10 @@ class Bike_Admin{
 
 	/* *
 	 * Get the posted data
+	 * 
+	 * @param Array $data - Data from the Post on the admin side
+	 * 
+	 * Returns appropriate color from the color map ($this->get_colors())
 	 * */
 	public function get_posted_color($data = []){
 		if(empty($data) || empty($data["initial_color"])){
@@ -112,6 +116,11 @@ class Bike_Admin{
 
 	/* *
 	 * Get the required file and pass the color
+	 *
+	 * @param String $name - Name of the template to be accessed/used
+	 * @param String $data - Data to be used for the get method as parameter for the color
+	 *
+	 * Returns the retrieved body from the wp_remote_get's remote accessed file
 	 * */
 	public function get_template($name, $data = ''){
 
