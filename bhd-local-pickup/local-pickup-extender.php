@@ -1,14 +1,14 @@
 <?php
 
 /* *
- *Plugin Name: 	   Cog Local Pickup Extender
- *Plugin URI:  	   http://cogtests.codenug.com/cog-local-pickup-extender
- *Description: 	   Extend the functionality of the local pickup plus plugin.
- *Version: 	   	   1.8.0
- *Author: 	       COG Developers
- *Author URI:      http://cycleofgood.com
- *License:         GPL v3 or later
- *License URI:     https://www.gnu.org/licenses/gpl-3.0.html
+ * Plugin Name: 	   	Cog Local Pickup Extender
+ * Plugin URI:  	   	http://cogtests.codenug.com/cog-local-pickup-extender
+ * Description: 	   	Extend the functionality of the local pickup plus plugin.
+ * Version: 	   		1.8.0
+ * Author: 	        	Amin Matola
+ * Author URI:      		http://cycleofgood.com
+ * License:         		GPL v3 or later
+ * License URI:     		https://www.gnu.org/licenses/gpl-3.0.html
  * */
 
 
@@ -53,11 +53,12 @@ class Cog_Local_Pickup_Master{
 		$this->version 		= "1.8.0";
 		$this->author  		= "Cog Developers Team";		
 
-		# load the plugin dependancies
-		$this->load_dependancies();
-
+	
 		# Check if the user is calling the file directly
 		defined("ABSPATH") or die(cog_generate_forbidden());
+		
+		# load the plugin dependancies
+		$this->load_dependancies();
 
 		# initialize the view handler (CSS/JS) used in "wp_enqueue_scripts"
 		$this->view_handler = new Cog_View_Handler();
