@@ -1,0 +1,167 @@
+/*
+ * Master CSS File for the frontend
+ */
+
+
+
+
+/* Master div */
+div > div > div.cart-collaterals{
+
+}
+
+/* Cross-sells list*/
+div > div > div.cart-collaterals > div.cross-sells > ul.products{
+	border-top:1px solid lightgrey !important;
+}
+
+/* Order table */
+div > div > div.cart-collaterals > div.cart_totals{
+	background:#f8f8f8 !important;
+	padding:0px 20px;
+	box-sizing: border-box;
+	/*max-width:none !important;*/
+	width:40% !important;
+}
+
+div > div > div.cart-collaterals > div.cross-sells > ul > li > a > h2 > br:last-child{
+	display:none !important;
+}
+
+/* Payment method logos */
+div > div > div.cart-collaterals > div.cart_totals > div.payment-logo{
+	text-align:right !important;
+}
+
+ /* Cart totals table, hide all rows but one. */
+div > div > div.cart-collaterals > div > table > tbody > tr:not([class = "order-total"]){
+	display: none !important;
+}
+
+/* Cart totals, header */
+div > div > div.cart-collaterals > div > h2{
+ 
+ }
+
+/*div > div > form > table.cog-shop-cart-table thead{
+	display:none;
+}*/
+
+div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb{
+	display: none;
+ 	width:50%;
+ 	float:left !important;
+ 	background:#ffffff;
+ 	height:150px !important;
+ }
+
+ div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb:last-child{
+ 	width:50% !important;
+ }
+
+
+ div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb:last-child tr td{
+ 	padding:5px 12px !important;
+ }
+
+div > div > div.cart-collaterals > div > table > tbody > tr.woocommerce-shipping-totals.shipping > td > form > a::after{
+ 	content:"" !important;
+ }
+
+
+ #post-27 > div > div > div.cart-collaterals > div.cart_totals > h2{
+ 	border-bottom:1px solid lightgrey !important;
+ }
+
+@media screen and (max-width:600px){
+
+		/********************************* Cart page desktop **************************/
+		div > div > form > table.cog-shop-cart-table tbody.cog-desktop-tb{
+			display: none;
+		}
+
+
+		/********************************* Cart Page Mobile View **********************/
+		div > div > form > table > thead{
+			display: none !important;
+		}
+
+		div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb{
+			display: block;
+		}
+
+		div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb tr{
+			background:white !important;
+		}
+
+		div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td.product-remove{
+			display: none !important;
+		}
+
+		div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td{
+			display: block;
+		}
+		/* cart product image */
+		div > div > form > table > tbody.cog-mobile-tb > tr.woocommerce-cart-form__cart-item.cart_item > td.product-thumbnail{
+			display: block !important;
+		    width: 100% !important;
+		    height: 130px !important;
+		    padding:0px !important;
+		}
+
+		div > div > form > table > tbody.cog-mobile-tb > tr.woocommerce-cart-form__cart-item.cart_item > td.product-thumbnail > span.cog-thumbnail{
+			width:100%;
+			display:block;
+		}
+
+		div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td.product-thumbnail > a > img{
+			max-width: 100% !important;
+			width: 200px;
+			margin: auto;
+			height: 130px;
+			margin-top: 0px;
+		}
+
+		div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td.product-thumbnail > a{
+			display: block;
+			width:100% !important;
+		}
+
+		div > div > form > table > tbody.cog-mobile-tb > tr{
+			border:0px solid white !important;
+		}
+
+		div > div > form > table > tbody.cog-mobile-tb:nth-child(4) > tr:nth-child(1) > td > a{
+			font-weight:900;
+			font-size:1.2em !important;
+		}
+		div > div > form > table > tbody.cog-mobile-tb:nth-child(4) > tr:nth-child(1) > td > span{
+			font-size:1.2em !important;
+		}
+		
+		table.shop_table td .amount, .woocommerce table.shop_table td, .woocommerce table.shop_table td span, .woocommerce table.shop_table td a, .woocommerce table.shop_table td strong{
+			font-weight:900 !important;
+		}
+
+		div > div > form > table.cog-shop-cart-table tbody.cog-mobile-tb:last-child tr td input{
+		 	/*max-width: 30%;*/
+		 	margin-left:0px;
+		    height: 25px;
+		 }
+
+		
+		div > div > form > table > thead > tr > th.product-price{
+			display: none !important;
+			width:40% !important;
+		}
+
+		/* Order table */
+		div > div > div.cart-collaterals > div.cart_totals{
+			width:100% !important;
+			margin:auto;
+		}
+
+		
+		/********************************* End of cart page **********************************/
+}
+

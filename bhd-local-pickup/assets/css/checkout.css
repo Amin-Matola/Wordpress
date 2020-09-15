@@ -1,0 +1,468 @@
+
+
+.cog-shop-header{
+	background: #ffffff;
+	display: grid;
+	grid-template-columns: 53% 40%;
+	grid-column-gap: 7% !important;
+	text-transform: uppercase;
+	margin: 10px 0px 30px;
+
+
+}
+#order_review_heading{
+	display: none;
+	font-weight:bold;
+}
+.cog-shop-header>div:first-child{
+}
+
+
+
+#customer_details > div.col-1.cog-toggle-form-area-1 > div{
+
+}
+
+
+#customer_details > div.col-1{
+		background:#01c5b8 !important;
+}
+#customer_details > div.col-1:nth-child(2),
+#customer_details > div.col-1:nth-child(3){
+	padding:20px !important;
+	background:#01c5b8 !important;
+}
+
+#customer_details > div.col-1.cog-toggle-form-area-2{
+		display: none;
+}
+
+#customer_details > div.col-1.cog-toggle-form-area,
+#customer_details > div.col-1.cog-toggle-form-area-2{
+	background:#01c5b8 !important;
+}
+
+
+#customer_details > div.col-1:nth-child(1){
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-column-gap: 10px;
+	padding:none !important;
+	margin-bottom:0px !important;
+	background:white !important;
+}
+#customer_details > div:nth-child(1)>div{
+	height:inherit;
+	margin:0px !important;
+	height:50px;
+	text-align:center;
+	vertical-align: middle;
+	padding-top: 10px;
+	font-size:1.2em;
+	color:#01c5b8;
+	border:1px solid #01c5b8;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-transform: uppercase;
+}
+#customer_details > div:nth-child(1)>div.cog-no-show{
+	visibility: hidden;
+}
+#customer_details > div:nth-child(1)>div:nth-child(1){
+	background: #01c5b8;
+	color: white;
+	cursor: pointer !important;
+}
+
+#customer_details > div:nth-child(1)>div:nth-child(2){
+	cursor: pointer !important;
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields > h3#ship-to-different-address{
+	/*display: none !important;*/
+}
+
+#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping > h3:nth-child(1){
+	margin-left:10px !important;
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields > div.shipping_address{
+	display: block !important;
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields > div > div > p.form-row,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > div > div > p.form-row,
+#shipping_state{
+	padding:10px;
+	border-radius:5px;
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields > div > div > p.form-row label,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > div > div > p.form-row label{
+	color:white !important;
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields span,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > div > div > p.form-row > span,
+#customer_details > div.col-1 > div.woocommerce-shipping-fields select,
+#customer_details > div input,
+#billing_country_field > span > span.selection > span,
+#pickup_point,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup select{
+	height:50px !important;
+	margin-bottom: 2px !important;
+	border-radius:5px;
+	font-size:14px;
+
+}
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields select,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup select{
+	padding-left: 5px !important;
+}
+
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup select option{
+	padding-left: -10px;
+}
+
+
+#customer_details > div.col-1 > div.woocommerce-shipping-fields select option,
+#customer_details > div.col-1 > div.woocommerce-billing-fields select option{
+	height:30px !important;
+	padding:10px 0px !important;
+	font-size:1em !important;
+}
+
+#customer_details > div.col-1 > div.woocommerce-additional-fields,
+#customer_details > div.col-1.cog-toggle-form-area #pickup_point_field,
+#customer_details > div.col-1.cog-toggle-form-area #arrival_date_field{
+	display: none;
+}
+
+/* *
+ * Billing fields specifc 
+ * */
+ .woocommerce-billing-fields input{
+ 	padding:10px !important;
+ 	margin:20px 0px !important;
+ }
+
+
+#ship-to-different-address > label{
+	display:inline-flex !important;
+	color:white !important;
+	font-size:1.1em;
+	margin-left:20px !important;
+}
+
+#ship-to-different-address > label > input[type="checkbox"]{
+	height:14px !important;
+
+}
+
+
+#post-27 > div > div > div.cart-collaterals > div.cart_totals > h2{
+ 	border-bottom:1px solid lightgrey !important;
+ }
+
+
+div.cog-order-top-summary{
+	width:98%;
+	margin:auto;
+	background:#fafafa;
+	text-align: center;
+	font-size:1.5em;
+	height:auto;
+	border-radius:10px;
+	font-weight:bold;
+	box-shadow:3px 3px 3px lightgrey;
+	padding:5px 1% !important;
+	display: none;
+}
+
+
+div.cog-order-top-summary #payment{
+	display: none !important;
+}
+
+div.cog-order-top-summary > div > div > div.col-10.cog-order-top-summary > div.cog-order-review {
+	background:#fafafa !important;
+
+}
+
+div > div > div.col-10.cog-order-top-summary > div.cog-order-pointer > span.review-cost > span > span{
+	font-size:16px !important;
+}
+div.cog-order-top-summary > div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table>thead{
+	border-top:1px solid black !important;
+}
+
+div.cog-order-top-summary > div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table>thead,
+div.cog-order-top-summary > div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table>tbody{
+ 	background:#fffdd0 !important;
+ 	margin-bottom:20px !important;
+
+}
+
+div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table > tfoot > tr.woocommerce-shipping-totals.shipping{
+	display: none !important;
+}
+
+#shipping_city_field,
+#shipping_state_field,
+#billing_address_2_field,
+#billing_state_field
+{
+	display: inline-block;
+	float:left;
+	clear:left !important;
+}
+
+
+#shipping_address_2_field,
+#shipping_postcode_field,
+#billing_city_field,
+#billing_postcode_field
+{
+	float:right;
+	display: inline-block;
+	clear:right !important;
+}
+
+
+#billing_address_2_field,
+#billing_state_field,
+#billing_city_field,
+#billing_postcode_field{
+	width:49%;
+}
+
+#shipping_city_field,
+#shipping_state_field,
+#shipping_address_2_field,
+#shipping_postcode_field{
+	width:50% !important;
+}
+
+
+#shipping_phone_field{
+	clear:both !important;
+}
+#shipping_phone_field > label,
+#billing_phone_field > label{
+	font-size:1.2em !important;
+}
+
+div.col-1.cog-toggle-form-area.cog-btn-shipping > div.woocommerce-billing-fields,
+#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping > h3>span#bill{
+	display: none;
+}
+
+#payment > div > div > p > label > span.woocommerce-terms-and-conditions-checkbox-text{
+	color:black !important;
+}
+
+div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table > tfoot > tr:nth-child(2){
+	display: none !important;
+}
+
+#cog_shipping_field > label #cog_shipping{
+	height:15px !important;
+}
+
+
+/* *
+ * Date
+ * */
+
+#arrival_date_field.cog_arrival_date_field{
+	display: none;
+}
+
+
+input[type="date"] {
+
+  position: relative;
+  padding: 10px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: transparent;
+  z-index: 1;
+}
+
+input[type="date"]::-webkit-inner-spin-button { 
+	display: none; 
+}
+
+input[type="date"]::-webkit-datetime-edit-text{
+	/*color:white;*/
+}
+
+input[type="date"]:before,
+input[type="text"]:before {
+  color: transparent;
+  background: none;
+  display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  /* This is the calendar icon in FontAwesome */
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  right: 6px;
+  color: #999;
+}
+
+#arrival_date::placeholder{
+	color:red !important;
+}
+
+/* End of Date */
+
+.text-danger2{
+	/*color: #e55555 !important;*/
+}
+
+h5.text-danger{
+	color: green !important; /*#5555e5 !important;*/
+}
+
+h5.text-danger.pickup_location_current_fee{
+ color:inherit !important;
+}
+
+.form-row label{
+	color:white !important;
+}
+
+/*#billing_state_field > span > span > span.selection > span,*/
+#billing_state, #billing_state_field > span > span > span.selection > span{
+	margin-top:20px !important;
+	height:50px !important;	
+
+}
+
+#billing_country{
+	margin-top:10px !important;
+	height:50px !important;	
+}
+
+div.cog-hidden-form-1,
+div.cog-hidden-form-2{
+	height: 0px !important;
+	overflow: hidden !important;
+}
+
+/* Additional Styling */
+
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > h3:nth-child(1),
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > h3:nth-child(3),
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > h3:nth-child(4),
+#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping > h3:nth-child(7){
+	margin-left:10px !important;
+}
+
+#billing_state, #shipping_state_field > span > span > span.selection > span #select2-shipping_state-container, 
+#shipping_country_field > span > span.selection > span #select2-shipping_country-container,
+#billing_country{
+	padding-top: 10px;
+	padding-left:12px;
+	color: #666 !important;
+	font-size: 14px !important;
+}
+
+
+#billing_country,
+#billing_state{
+	padding-top: 0px !important;
+	padding-left:0px !important;
+}
+
+#customer_details > div.col-1.cog-toggle-form-area #billing_first_name_field > label > b,
+#customer_details > div.col-1.cog-toggle-form-area .cog-toggle-form-area-1 #billing_last_name_field > label > b{
+	display:none !important;
+}
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup #billing_state_field > span > span > span.selection > span,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > .woocommerce-billing-fields #billing_state,
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup > .woocommerce-billing-fields input,
+#billing_state_field > span > span > span.selection > span > span.select2-selection__arrow,
+#billing_country_field > span > span.selection > span,
+#billing_country_field > span > span.selection > span > span.select2-selection__arrow{
+	margin-top:10px !important;
+	padding-top: 10px;
+	top: 15px !important;
+}
+
+
+
+/**** Last Mods ******************/
+div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup #arrival_date_field.cog_arrival_date_field{
+	display: none !important;
+	width:96.2% !important;
+	margin:10px 1.8% !important;
+	border-top:0px solid black !important;
+}
+
+#customer_details > div.col-1.cog-toggle-form-area-2.cog-btn-local-pickup #pickup_point{
+	width:96% !important;
+	margin:0px 2% 15px !important
+}
+
+#arrival_date_field #arrival_date{
+	padding-left: 10px !important;
+	color:green;
+}
+
+#billing_state_field > span > #billing_state{
+	padding-left:10px !important;
+}
+
+#order_review > table > tfoot > tr:nth-child(2) > td:nth-child(2) > h5#free-local{
+	display: none;
+}
+
+
+
+
+@media screen and (max-width: 600px){
+	div.cog-order-top-summary{
+		display: block !important;
+		font-size:1.06em;
+	}
+
+	div.cog-order-top-summary > div > div > div.col-10.cog-order-top-summary > div.cog-order-review,
+	div > div > div.col-10.cog-order-top-summary > div.cog-order-review > table > tfoot,
+	.woocommerce table.shop_table th{
+		font-size:0.988em !important;
+	}
+	div > div > div.col-10.cog-shop-header{
+			display: block !important;
+	}
+
+	div > div > div.col-10.cog-shop-header > div.col-5{
+		width:100% !important;
+	}
+
+	div > div > div.col-10.cog-shop-header > div.col-4.ml-auto{
+		display: none !important;
+	}
+
+	form.woocommerce-checkout > #order_review > table{
+		display: none !important;
+	}
+
+	#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping #shipping_address_2_field.form-row-wide,
+	#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping #shipping_state_field.form-row-wide,
+	#billing_address_2_field,
+	#billing_state_field,
+	#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping #shipping_city_field,
+	#customer_details > div.col-1.cog-toggle-form-area.cog-btn-shipping #shipping_postcode_field,
+	#billing_city_field,
+	#billing_postcode_field{
+		clear:both !important;
+		width:100% !important;
+	}
+}
