@@ -92,12 +92,13 @@ class Bike_Admin{
 	 * Get the posted data
 	 * */
 	public function get_posted_color($data = []){
-	    if(empty($data) || empty($data["initial_color"])){
-	        return false;
-	    }
+		if(empty($data) || empty($data["initial_color"])){
+		     return false;
+		}
+		
 		$colors 	= $this->get_colors();
-
 		$posted 	= $data["initial_color"];
+		
 		return $colors[$posted];
 
 	}
@@ -115,9 +116,10 @@ class Bike_Admin{
 	public function get_template($name, $data = ''){
 
 		return wp_remote_retrieve_body( 
-			wp_remote_get( 
-				dirname(plugin_dir_url( __FILE__ ))."/templates/".$name."?initial=".$data
-			)); 
+				wp_remote_get( 
+					dirname(plugin_dir_url( __FILE__ ))."/templates/".$name."?initial=".$data
+				)
+			); 
 	}
 
 
@@ -125,25 +127,25 @@ class Bike_Admin{
 	 * Open the required file and set the main page content
 	 * */
 	public function set_main_page_content(){
-	    $initial        =   "";
-	    $color          =   "";
-	    
-		if(array_key_exists("initial_color", $_POST)){
-            
-            $initial    =   $_POST["initial_color"];
-            
-            if(!empty($initial)) {
-			    update_option( "initial_colour", $initial, true );
-			    $color  =   "Initial Color Changed To ".$this->get_posted_color($_POST);
-            }
-			if(!$this->bike_settings() && !empty($_POST["bike_sku"])){
-			    $color  = "Sorry, the bike with Stock Keep Unit ".$_POST["bike_sku"]." is not available. Please make sure you add a bike with a defined SKU.";
-			}
-		}
-		
+			  $initial        =   "";
+			  $color          =   "";
 
-		$options_file 			 = "admin/options.php";
-		$this->main_page_content = $this->get_template($options_file, $color);
+			  if(array_key_exists("initial_color", $_POST)){
+
+				  $initial    =   $_POST["initial_color"];
+
+				  if(!empty($initial)) {
+						    update_option( "initial_colour", $initial, true );
+						    $color  =   "Initial Color Changed To ".$this->get_posted_color($_POST);
+				   }
+				  if(!$this->bike_settings() && !empty($_POST["bike_sku"])){
+					$color  = "Sorry, the bike with Stock Keep Unit ".$_POST["bike_sku"]." is not available. Please make sure you add a bike with a defined SKU.";
+				}
+			 }
+
+
+			 $options_file 			 = "admin/options.php";
+			 $this->main_page_content = $this->get_template($options_file, $color);
 	}
 
 
