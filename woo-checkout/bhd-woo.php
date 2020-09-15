@@ -2,13 +2,13 @@
 
 
 /* *
- * Plugin Name: Beehive Woo Checkout
- * Plugin URI:  https://beehivedigital.co
- * Description: Woocommerce Checkout Development and Advanced Search Engine Optimization
- * Author: 		Beehive Digital
- * Author URI:  https://beehivedigital.co
- * Version:     2.0.1
- * License:     GPLv2 or later
+ * Plugin Name: 	Beehive Woo Checkout
+ * Plugin URI:  	https://beehivedigital.co
+ * Description: 	Woocommerce Checkout Development and Advanced Search Engine Optimization
+ * Author: 		Amin Matola
+ * Author URI:  	https://beehivedigital.co
+ * Version:     	2.0.1
+ * License:     	GPLv2 or later
  * */
 
 //////////// Helper Functions ////////////////
@@ -61,13 +61,11 @@ function bh_all_handlers($src){
 }
 
 function bh_all_srcs($w){
-	$r = [];
+	$items = [];
 	foreach($w->registered as $i){
-		if(strpos($i->src, "vc_material.ttf")){
-		   $r[$i->handle] = $i->src;
-		}
+	   $items[$i->handle] = $i->src;
 	}
-	return $r;
+	return $items;
 }
 
 /****************
@@ -82,34 +80,6 @@ class Bhd_Checkout{
 
 	public function init(){
 		$this->add_hooks();
-	}
-
-	public function add_styles(){
-		global $wp_scripts;
-
-		if( !is_admin() ){
-			wp_register_script("bhd-lazy-load", null, [], "1.0.1", true);
-			wp_add_inline_script( 'bhd-lazy-load',
-				"
-				/* Let the doc load first */
-				window.onload = function(){
-					try{var l=new LazyLoad({elements_selector: '[loading=lazy]',use_native: true}); return true;}
-					catch(e){ 
-						document.querySelectorAll('img').forEach(function(i){
-							var _src = i.getAttribute('data-src');if(Boolean(_src)) i.setAttribute('src', _src); 
-					});
-				}};
-			" );
-			$wp_scripts->enqueue('bhd-lazy-load');
-		}
-		if( is_checkout() && ! is_wc_endpoint_url() ) {
-			wp_enqueue_script( "bhd_cscript", plugin_dir_url( __FILE__ )."assets/js/bhd-woo.js", [], "1.1.0", true );
-		}
-		if(is_cart() && !is_checkout()){
-			add_action( 'woocommerce_before_cart_contents', array( $this,'my_add_notice_free_shipping' ));
-		}
-		wp_enqueue_style( "bhd_combined_styles", plugin_dir_url( __FILE__ )."assets/bhd_combined_styles.min.css", [], "1.0", "all" );
-		//wp_enqueue_style( "bhd_bootstrap_glyphicons", plugin_dir_url( __FILE__ )."assets/bootstrap-glyphicons.css", [], "1.0", "all" );
 	}
 
 
@@ -152,6 +122,39 @@ class Bhd_Checkout{
 		// });
 		add_filter( "get_filter", function($which){global $wp_filters; return $wp_filters[$which]; });
 	}
+	
+	
+	/* *********************** 
+	 *Add necessary styles 
+	 **************/ 
+	public function add_styles(){
+		global $wp_scripts;
+
+		if( !is_admin() ){
+			wp_register_script("bhd-lazy-load", null, [], "1.0.1", true);
+			wp_add_inline_script( 'bhd-lazy-load',
+				"
+				/* Let the doc load first */
+				window.onload = function(){
+					try{var l=new LazyLoad({elements_selector: '[loading=lazy]',use_native: true}); return true;}
+					catch(e){ 
+						document.querySelectorAll('img').forEach(function(i){
+							var _src = i.getAttribute('data-src');if(Boolean(_src)) i.setAttribute('src', _src); 
+					});
+				}};
+			" );
+			$wp_scripts->enqueue('bhd-lazy-load');
+		}
+		if( is_checkout() && ! is_wc_endpoint_url() ) {
+			wp_enqueue_script( "bhd_cscript", plugin_dir_url( __FILE__ )."assets/js/bhd-woo.js", [], "1.1.0", true );
+		}
+		if(is_cart() && !is_checkout()){
+			add_action( 'woocommerce_before_cart_contents', array( $this,'my_add_notice_free_shipping' ));
+		}
+		wp_enqueue_style( "bhd_combined_styles", plugin_dir_url( __FILE__ )."assets/bhd_combined_styles.min.css", [], "1.0", "all" );
+		//wp_enqueue_style( "bhd_bootstrap_glyphicons", plugin_dir_url( __FILE__ )."assets/bootstrap-glyphicons.css", [], "1.0", "all" );
+	}
+	
 
 	/* *
 	 * Remove unnecessary scripts
@@ -183,6 +186,10 @@ class Bhd_Checkout{
 		return str_replace( 'src', 'defer src', $link );
 	}
 
+	
+	/* ****************
+	 * Remove unused emojis and scripts that may slow site
+	 * ****/
 	public function disable_imojs(){
 		global $wp_styles;
 		if(!in_array("administrator", wp_get_current_user()->roles)){
@@ -202,7 +209,9 @@ class Bhd_Checkout{
 		}
 	}
 
-	// Remove google fonts to reduce requests
+	/* ***************
+	 * Remove google fonts to reduce requests
+	 *************/
 	public function remove_g_fonts(){
 		global $wp_styles;
 		foreach($wp_styles as $st){
@@ -331,11 +340,11 @@ class Bhd_Checkout{
 	 
 	    // Look within passed path within the theme - this is priority
 	    $template = locate_template(
-	    array(
-	      $template_path . $template_name,
-	      $template_name
-	    )
-	   );
+		    array(
+		      $template_path . $template_name,
+		      $template_name
+		    )
+	   	);
 	 
 	   if( ! $template && file_exists( $plugin_path . $template_name ) )
 	    	$template = $plugin_path . $template_name;
@@ -402,6 +411,10 @@ class Bhd_Checkout{
 		return $data;
 	}
 	
+	
+	/* ******************
+	 * Capture data when it is posted
+	 ************/
 	public function bhd_get_posted_data( $data ){
 		
 		if( !array_key_exists("shipping_country", $data) || empty( $data["shipping_country"]) ){
@@ -429,7 +442,7 @@ class Bhd_Checkout{
 		return $data;
 	}
 
-	/* *
+	/* **********
 	* Get shipping methods based on the zone
 	* */
 	public function get_zone_free_instance(){
@@ -454,6 +467,9 @@ class Bhd_Checkout{
 
 	}
 
+	/* *****************************
+	 * Notify customer of free shipping purchase qualification
+	 ***********/
 	function my_add_notice_free_shipping() {
 
 		$free_instance 			  = $this->get_zone_free_instance();
