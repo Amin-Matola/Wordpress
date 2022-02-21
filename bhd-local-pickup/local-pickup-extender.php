@@ -6,7 +6,7 @@
  * Description: 	   	Extend the functionality of the local pickup plus plugin.
  * Version: 	   		1.8.0
  * Author: 	        	Amin Matola
- * Author URI:      		http://cycleofgood.com
+ * Author URI:      		http://codenug.com
  * License:         		GPL v3 or later
  * License URI:     		https://www.gnu.org/licenses/gpl-3.0.html
  * */
@@ -51,7 +51,7 @@ class Cog_Local_Pickup_Master{
 	private function __construct(){
 		# Plugin Data
 		$this->version 		= "1.8.0";
-		$this->author  		= "Cog Developers Team";		
+		$this->author  		= "AMIN MATOLA";		
 
 	
 		# Check if the user is calling the file directly
