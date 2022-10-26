@@ -3,7 +3,7 @@
 
 /* *
  * Plugin Name: 	Beehive Woo Checkout
- * Plugin URI:  	https://beehivedigital.co
+ * Plugin URI:  	https://codeblush.com
  * Description: 	Woocommerce Checkout Development and Advanced Search Engine Optimization
  * Author: 		Amin Matola
  * Author URI:  	https://beehivedigital.co
@@ -69,7 +69,7 @@ function bh_all_srcs($w){
 }
 
 /****************
- * Beehive Woo Checkout Merged with Beehive Digital SEO
+ * Woo Checkout Merged with WP SEO
  * **************/
 
 class Bhd_Checkout{
