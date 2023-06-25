@@ -2,11 +2,11 @@
 
 
 /* *
- * Plugin Name: 	Beehive Woo Checkout
+ * Plugin Name: 	Woo Checkout
  * Plugin URI:  	https://codeblush.com
  * Description: 	Woocommerce Checkout Development and Advanced Search Engine Optimization
  * Author: 		Amin Matola
- * Author URI:  	https://beehivedigital.co
+ * Author URI:  	https://codeblush.com
  * Version:     	2.0.1
  * License:     	GPLv2 or later
  * */
