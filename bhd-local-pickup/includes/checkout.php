@@ -7,7 +7,6 @@ class Extender_Checkout_Handler{
 
         /* *
          * Custom fields to be used to specify where a shipping method is not a select drop down
-         * @param A Location to be used to calculate number of items
          *
          * Return filtered shipping method field.
          * */
